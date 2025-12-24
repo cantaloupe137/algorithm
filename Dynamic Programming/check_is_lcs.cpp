@@ -24,7 +24,7 @@ signed main() {
         vector<int> arr1, arr2, arr3;
         int n;
 
-        // 解析三行輸入
+        // 三行輸入字串轉數字
         sstream ss1(line1); while (ss1 >> n) arr1.pb(n);
         sstream ss2(line2); while (ss2 >> n) arr2.pb(n);
         sstream ss3(line3); while (ss3 >> n) arr3.pb(n);
