@@ -9,20 +9,20 @@ long long memo[100][100];
 
 // i: 當前 stack 內的元素數量
 // j: 尚未入 stack 的元素數量
-long long solveDP(int i, int j) {
-    if (j == 0) return 1; // 剩下的全在 stack 裡，順序固定
-    if (memo[i][j] != -1) return memo[i][j];
+long long solveDP(int in_stack, int not_in_stack) {
+    if (not_in_stack == 0) return 1; // 剩下的全在 stack 裡，順序固定
+    if (memo[in_stack][not_in_stack] != -1) return memo[in_stack][not_in_stack];
 
     long long count = 0;
     // 選擇 1: Push (前提是還有元素可以入棧)
-    count += solveDP(i + 1, j - 1);
+    count += solveDP(in_stack + 1, not_in_stack - 1);
     
     // 選擇 2: Pop (前提是 stack 裡面有東西)
-    if (i > 0) {
-        count += solveDP(i - 1, j);
+    if (in_stack > 0) {
+        count += solveDP(in_stack - 1, not_in_stack);
     }
 
-    return memo[i][j] = count;
+    return memo[in_stack][not_in_stack] = count;
 }
 
 int main() {
