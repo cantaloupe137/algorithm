@@ -1,7 +1,9 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
+#include <bits/stdc++.h>
+#define int long long
+#define WA() ios::sync_with_stdio(0);cin.tie(0)
+#define pb push_back
+#define endl '\n'
+#define sstream stringstream
 
 using namespace std;
 
@@ -25,17 +27,18 @@ long long solveDP(int in_stack, int not_in_stack) {
     return memo[in_stack][not_in_stack] = count;
 }
 
-int main() {
+signed main() {
+    // WA();
     string line;
     while (getline(cin, line) && !line.empty()) {
-        stringstream ss(line);
+        sstream ss(line);
         string item;
         vector<string> source;
         while (ss >> item) source.push_back(item);
 
         string target;
         if (!getline(cin, target)) break;
-        stringstream ss2(target);
+        sstream ss2(target);
         ss2 >> target;
 
         int k = -1;
