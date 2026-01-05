@@ -9,4 +9,5 @@ add_executable(DSA
         "Dynamic Programming/lcs_string.cpp"
         "Dynamic Programming/OPTBST.cpp"
         "graph/shortest_path/floydWasher.cpp"
+        graph/shortest_path/dijkstra.cpp
 )
